@@ -21,7 +21,7 @@ DummyJSON API
 
   🚀 Kurulum:
 Projeyi klonlayın:
-git clone https://github.com/kullanici-adi/react-shopping-app.git
+git clone https://github.com/bahadrdg/React-Shopping-App-with-Zustand-and-DummyJSON?
 Gerekli bağımlılıkları yükleyin:
   npm install
 Uygulamayı başlatın:

@@ -1,51 +1,26 @@
-# React + TypeScript + Vite
+Proje Başlığı:
+React Shopping App with Zustand and DummyJSON
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GitHub Repo Açıklaması:
+Bu proje, React kullanılarak oluşturulmuş basit bir alışveriş uygulamasıdır. DummyJSON API üzerinden ürün ve kullanıcı verileri çekilerek kullanıcı girişi doğrulaması yapılmaktadır. Zustand kullanılarak sepet yönetimi sağlanmıştır. Proje, ürün listeleme, düzenleme ve silme gibi temel CRUD işlemlerini içermektedir. Arayüz tasarımı için PrimeReact ve TailwindCSS kullanılmıştır.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-"# React-Shopping-App-with-Zustand-and-DummyJSON" 
+📌 Proje Özellikleri:
+Kullanıcı Girişi: DummyJSON API ile kullanıcı doğrulama.
+Sepet Yönetimi: Zustand ile sepet ekleme/silme işlemleri.
+Ürün Yönetimi: Ürün listeleme, düzenleme ve silme işlemleri.
+Arayüz: PrimeReact bileşenleri ve TailwindCSS ile modern tasarım.
+🛠️ Kullanılan Teknolojiler:
+React
+Zustand
+PrimeReact
+TailwindCSS
+DummyJSON API
+🚀 Kurulum:
+Projeyi klonlayın:
+git clone https://github.com/kullanici-adi/react-shopping-app.git
+Gerekli bağımlılıkları yükleyin:
+npm install
+Uygulamayı başlatın:
+npm start
+Bu proje, temel e-ticaret uygulamaları ve global state yönetimi konularında pratik yapmak için idealdir.
+👉 API Kaynağı: https://dummyjson.com

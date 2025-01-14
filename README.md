@@ -9,18 +9,22 @@ Kullanıcı Girişi: DummyJSON API ile kullanıcı doğrulama.
 Sepet Yönetimi: Zustand ile sepet ekleme/silme işlemleri.
 Ürün Yönetimi: Ürün listeleme, düzenleme ve silme işlemleri.
 Arayüz: PrimeReact bileşenleri ve TailwindCSS ile modern tasarım.
+
+
 🛠️ Kullanılan Teknolojiler:
 React
 Zustand
 PrimeReact
 TailwindCSS
 DummyJSON API
-🚀 Kurulum:
+
+
+  🚀 Kurulum:
 Projeyi klonlayın:
 git clone https://github.com/kullanici-adi/react-shopping-app.git
 Gerekli bağımlılıkları yükleyin:
-npm install
+  npm install
 Uygulamayı başlatın:
-npm start
+  npm start
 Bu proje, temel e-ticaret uygulamaları ve global state yönetimi konularında pratik yapmak için idealdir.
-👉 API Kaynağı: https://dummyjson.com
+  👉 API Kaynağı: https://dummyjson.com

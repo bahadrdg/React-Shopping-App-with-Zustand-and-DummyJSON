@@ -140,6 +140,7 @@ export default function MyForm() {
           />
 
           <Button type="submit">Giriş Yap</Button>
+          <p>Kullanıcı Adı ve Şifre Bilgilerine<a target="_blank" href="https://dummyjson.com/users" className="text-blue-500 hover:text-blue-700"> Buradan </a>Ulaşabilirsiniz.</p>
         </form>
       </Form>
       <Footer />

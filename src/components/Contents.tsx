@@ -47,10 +47,11 @@ const Contents = () => {
 
   const handleUpdate = () => {
     if (selectedProduct) {
-      const updatedProduct: Product = {
+      const updatedProduct = {
         ...selectedProduct,
         id: Number(selectedProduct.id),
-        thumbnail: selectedProduct.images[0]
+        thumbnail: selectedProduct.images[0],
+        name: selectedProduct.title
       };
       updateProduct(updatedProduct);
       toast.current?.show({

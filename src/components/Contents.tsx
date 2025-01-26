@@ -47,7 +47,12 @@ const Contents = () => {
 
   const handleUpdate = () => {
     if (selectedProduct) {
-      updateProduct({ ...selectedProduct, id: Number(selectedProduct.id) });
+      const updatedProduct = {
+        ...selectedProduct,
+        id: Number(selectedProduct.id),
+        thumbnail: selectedProduct.images[0]
+      };
+      updateProduct(updatedProduct);
       toast.current?.show({
         severity: "success",
         summary: "Başarılı",

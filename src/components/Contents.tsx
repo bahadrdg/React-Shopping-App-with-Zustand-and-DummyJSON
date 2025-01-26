@@ -25,6 +25,8 @@ interface Product {
   brand: string;
   name: string;
   thumbnail: string;
+  discountPercentage?: number;
+  discountedPrice?: number;
 }
 
 const Contents = () => {
@@ -50,8 +52,10 @@ const Contents = () => {
       const updatedProduct = {
         ...selectedProduct,
         id: Number(selectedProduct.id),
-        thumbnail: selectedProduct.images[0],
-        name: selectedProduct.title
+        thumbnail: selectedProduct.images[0] || '',
+        name: selectedProduct.title,
+        discountPercentage: selectedProduct.discountPercentage || 0,
+        discountedPrice: selectedProduct.price
       };
       updateProduct(updatedProduct);
       toast.current?.show({

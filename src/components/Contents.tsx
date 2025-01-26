@@ -49,22 +49,40 @@ const Contents = () => {
 
   const handleUpdate = () => {
     if (selectedProduct) {
-      const updatedProduct = {
-        ...selectedProduct,
-        id: Number(selectedProduct.id),
-        thumbnail: selectedProduct.images[0] || '',
-        name: selectedProduct.title,
-        discountPercentage: selectedProduct.discountPercentage || 0,
-        discountedPrice: selectedProduct.price
-      };
-      updateProduct(updatedProduct);
-      toast.current?.show({
-        severity: "success",
-        summary: "Başarılı",
-        detail: "Ürün başarıyla güncellendi",
-        life: 3000,
-      });
-      setDialogVisible(false);
+      try {
+        const productToUpdate = {
+          ...selectedProduct,
+          id: Number(selectedProduct.id),
+          title: selectedProduct.title,
+          category: selectedProduct.category,
+          price: selectedProduct.price,
+          stock: selectedProduct.stock,
+          rating: selectedProduct.rating,
+          description: selectedProduct.description,
+          images: selectedProduct.images,
+          warrantyInformation: selectedProduct.warrantyInformation,
+          brand: selectedProduct.brand,
+          name: selectedProduct.title,
+          thumbnail: selectedProduct.images[0] || ''
+        } as const;
+
+        updateProduct(productToUpdate);
+        toast.current?.show({
+          severity: "success",
+          summary: "Başarılı",
+          detail: "Ürün başarıyla güncellendi",
+          life: 3000,
+        });
+        setDialogVisible(false);
+      } catch (error) {
+        console.error('Update error:', error);
+        toast.current?.show({
+          severity: "error",
+          summary: "Hata",
+          detail: "Ürün güncellenirken bir hata oluştu",
+          life: 3000,
+        });
+      }
     }
   };
 

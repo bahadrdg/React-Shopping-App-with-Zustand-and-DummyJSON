@@ -47,7 +47,7 @@ const Contents = () => {
 
   const handleUpdate = () => {
     if (selectedProduct) {
-      const updatedProduct = {
+      const updatedProduct: Product = {
         ...selectedProduct,
         id: Number(selectedProduct.id),
         thumbnail: selectedProduct.images[0]

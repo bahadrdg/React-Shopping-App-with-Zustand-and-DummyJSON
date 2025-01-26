@@ -14,8 +14,6 @@ import useProductsStore from "@/store/productsStore";
 
 interface Product {
   id: string;
-  name: string;
-  thumbnail: string;
   title: string;
   category: string;
   price: number;
@@ -25,6 +23,8 @@ interface Product {
   images: string[];
   warrantyInformation: string;
   brand: string;
+  name: string;
+  thumbnail: string;
 }
 
 const Contents = () => {
@@ -152,7 +152,7 @@ const Contents = () => {
                 label="Kaydet"
                 icon="pi pi-check"
                 onClick={handleUpdate}
-                className="border p-2 bg-green-500 text-white"
+                className="p-2 text-white bg-green-500 border"
               />
             )}
           </div>
@@ -160,20 +160,20 @@ const Contents = () => {
         onHide={() => setDialogVisible(false)}
       >
         {selectedProduct && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="space-y-4">
               <div className="col-span-2">
                 <img
                   src={selectedProduct.images[0]}
                   alt={selectedProduct.title}
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  className="object-cover w-full h-64 rounded-lg shadow-lg"
                 />
               </div>
 
               {isEditing ? (
                 <>
                   <div className="field">
-                    <label className="font-semibold mb-2 block">Başlık</label>
+                    <label className="block mb-2 font-semibold">Başlık</label>
                     <InputText
                       value={selectedProduct.title}
                       onChange={(e) =>
@@ -185,7 +185,7 @@ const Contents = () => {
                     />
                   </div>
                   <div className="field">
-                    <label className="font-semibold mb-2 block">Kategori</label>
+                    <label className="block mb-2 font-semibold">Kategori</label>
                     <Dropdown
                       value={selectedProduct.category}
                       options={categories}
@@ -199,7 +199,7 @@ const Contents = () => {
                     />
                   </div>
                   <div className="field">
-                    <label className="font-semibold mb-2 block">Fiyat</label>
+                    <label className="block mb-2 font-semibold">Fiyat</label>
                     <InputNumber
                       value={selectedProduct.price}
                       onValueChange={(e) =>
@@ -235,7 +235,7 @@ const Contents = () => {
               {isEditing ? (
                 <>
                   <div className="field">
-                    <label className="font-semibold mb-2 block">Stok</label>
+                    <label className="block mb-2 font-semibold">Stok</label>
                     <InputNumber
                       value={selectedProduct.stock}
                       onValueChange={(e) =>
@@ -247,7 +247,7 @@ const Contents = () => {
                     />
                   </div>
                   <div className="field">
-                    <label className="font-semibold mb-2 block">Açıklama</label>
+                    <label className="block mb-2 font-semibold">Açıklama</label>
                     <InputTextarea
                       value={selectedProduct.description}
                       onChange={(e) =>
@@ -260,7 +260,7 @@ const Contents = () => {
                     />
                   </div>
                   <div className="field">
-                    <label className="font-semibold mb-2 block">Marka</label>
+                    <label className="block mb-2 font-semibold">Marka</label>
                     <InputText
                       value={selectedProduct.brand}
                       onChange={(e) =>
@@ -301,7 +301,7 @@ const Contents = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex items-center justify-center h-screen">
         Loading...
       </div>
     );
@@ -309,7 +309,7 @@ const Contents = () => {
 
   if (error) {
     return (
-      <div className="flex justify-center items-center h-screen text-red-500">
+      <div className="flex items-center justify-center h-screen text-red-500">
         Error: {error instanceof Error ? error.message : "An error occurred"}
       </div>
     );
@@ -335,7 +335,7 @@ const Contents = () => {
           value={globalFilter}
           onChange={(e) => setGlobalFilter(e.target.value)}
           placeholder="Tabloda ara"
-          className="border my-2 p-2"
+          className="p-2 my-2 border"
           
         />
       </div>

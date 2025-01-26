@@ -13,7 +13,7 @@ import { ConfirmDialog } from 'primereact/confirmdialog';
 import useProductsStore from "@/store/productsStore";
 
 interface Product {
-  id: string;
+  id: number;
   title: string;
   category: string;
   price: number;
@@ -47,8 +47,7 @@ const Contents = () => {
 
   const handleUpdate = () => {
     if (selectedProduct) {
-      // @ts-ignore - Tip uyumsuzluğunu geçici olarak görmezden gelelim
-      updateProduct(selectedProduct);
+      updateProduct({ ...selectedProduct, id: Number(selectedProduct.id) });
       toast.current?.show({
         severity: "success",
         summary: "Başarılı",
@@ -61,8 +60,7 @@ const Contents = () => {
 
   const handleDelete = () => {
     if (selectedProduct) {
-      // @ts-ignore - Tip uyumsuzluğunu geçici olarak görmezden gelelim
-      deleteProduct(selectedProduct.id);
+      deleteProduct(Number(selectedProduct.id));
       toast.current?.show({
         severity: "success",
         summary: "Başarılı",

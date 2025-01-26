@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 
-// Kendi InputProps interface'imizi tanımlayalım
+// InputProps'u kaldırıp sadece PasswordInputProps kullanıyoruz
 interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	className?: string;
 }

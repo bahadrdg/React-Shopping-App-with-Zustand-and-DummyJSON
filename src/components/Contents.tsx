@@ -13,7 +13,9 @@ import { ConfirmDialog } from 'primereact/confirmdialog';
 import useProductsStore from "@/store/productsStore";
 
 interface Product {
-  id: number;
+  id: string;
+  name: string;
+  thumbnail: string;
   title: string;
   category: string;
   price: number;
@@ -25,7 +27,7 @@ interface Product {
   brand: string;
 }
 
-const Contents = () => {
+const Contents = ({ product }: { product: Product }) => {
   const [first, setFirst] = useState(0);
   const [rows, setRows] = useState(10);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);

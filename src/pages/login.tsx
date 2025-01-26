@@ -63,7 +63,7 @@ export default function MyForm() {
         });
 
         return response.data;
-      } catch (error: any) {
+      } catch (error: unknown) {
         throw new Error(
           error.response?.data?.message || "Giriş yapılırken bir hata oluştu"
         );
@@ -84,7 +84,7 @@ export default function MyForm() {
 
       navigate("/");
     },
-    onError: (error: any) => {
+    onError: (error: unknown) => {
       toast.warning("Giriş Başarısız", {
         action: {
           label: "Kapat",

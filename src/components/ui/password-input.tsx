@@ -1,10 +1,15 @@
-
 import * as React from 'react'
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Input, type InputProps } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
+
+export interface InputProps {
+	value?: string;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	placeholder?: string;
+}
 
 const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
 	const [showPassword, setShowPassword] = React.useState(false)
@@ -48,4 +53,4 @@ const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(({ classNam
 })
 PasswordInput.displayName = 'PasswordInput'
 
-export { PasswordInput }
+export default PasswordInput

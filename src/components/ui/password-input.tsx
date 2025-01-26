@@ -10,7 +10,7 @@ interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement>
 	className?: string;
 }
 
-const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(({ className, ...props }, ref) => {
+export const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(({ className, ...props }, ref) => {
 	const [showPassword, setShowPassword] = React.useState(false)
 	const disabled = props.value === '' || props.value === undefined || props.disabled
 
@@ -51,5 +51,3 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(({ 
 	)
 })
 PasswordInput.displayName = 'PasswordInput'
-
-export default PasswordInput

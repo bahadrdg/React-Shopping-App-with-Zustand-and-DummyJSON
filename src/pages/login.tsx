@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 import Header from "@/components/Header";
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
@@ -63,10 +63,13 @@ export default function MyForm() {
         });
 
         return response.data;
-      } catch (error: unknown) {
-        throw new Error(
-          error.response?.data?.message || "Giriş yapılırken bir hata oluştu"
-        );
+      } catch (error) {
+        if (error instanceof AxiosError) {
+          throw new Error(
+            error.response?.data?.message || "Giriş yapılırken bir hata oluştu"
+          );
+        }
+        throw new Error("Giriş yapılırken bir hata oluştu");
       }
     },
     onSuccess: (data) => {
@@ -85,13 +88,14 @@ export default function MyForm() {
       navigate("/");
     },
     onError: (error: unknown) => {
-      toast.warning("Giriş Başarısız", {
+      const errorMessage = error instanceof Error ? error.message : "Giriş Başarısız";
+      toast.warning(errorMessage, {
         action: {
           label: "Kapat",
           onClick: () => console.log("Kapatıldı"),
         },
       });
-      console.error(error);
+      console.error(errorMessage);
     },
   });
 

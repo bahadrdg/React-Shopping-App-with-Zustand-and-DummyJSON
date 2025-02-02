@@ -14,10 +14,10 @@ function App() {
   return (
     <>
       <Header />
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 py-5 pt-[90px]">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 py-5 pt-[90px] max-lg:pt-[130px]">
         <div className="flex items-center space-x-2 ">
-          <div className="flex items-center space-x-4 border p-2 rounded-lg">
-            <div className=" flex flex-col">
+          <div className="flex items-center p-2 space-x-4 border rounded-lg">
+            <div className="flex flex-col ">
               <p className="text-sm text-opacity-80">
                 Ana sayfa içerikleri ile içerik sayfaları arasında geçiş yapmak
                 için switch'i kullanın.

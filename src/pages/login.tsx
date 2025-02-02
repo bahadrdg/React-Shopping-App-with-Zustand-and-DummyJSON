@@ -88,7 +88,8 @@ export default function MyForm() {
       navigate("/");
     },
     onError: (error: unknown) => {
-      const errorMessage = error instanceof Error ? error.message : "Giriş Başarısız";
+      const errorMessage =
+        error instanceof Error ? error.message : "Giriş Başarısız";
       toast.warning(errorMessage, {
         action: {
           label: "Kapat",
@@ -106,43 +107,57 @@ export default function MyForm() {
   return (
     <div>
       <Header />
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-8 max-w-3xl mx-auto py-10 pt-[90px]"
-        >
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Kullanıcı Adı</FormLabel>
-                <FormControl>
-                  <Input placeholder="Kullanıcı Adı" type="text" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+      <div className="max-lg:px-4">
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 max-w-3xl mx-auto py-10 pt-[90px]"
+          >
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Kullanıcı Adı</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Kullanıcı Adı" type="text" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Şifre</FormLabel>
-                <FormControl>
-                  <PasswordInput placeholder="Şifrenizi Giriniz" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Şifre</FormLabel>
+                  <FormControl>
+                    <PasswordInput placeholder="Şifrenizi Giriniz" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <Button type="submit">Giriş Yap</Button>
-          <p>Kullanıcı Adı ve Şifre Bilgilerine<a target="_blank" href="https://dummyjson.com/users" className="text-blue-500 hover:text-blue-700"> Buradan </a>Ulaşabilirsiniz.</p>
-        </form>
-      </Form>
+            <Button type="submit">Giriş Yap</Button>
+            <p>
+              Kullanıcı Adı ve Şifre Bilgilerine
+              <a
+                target="_blank"
+                href="https://dummyjson.com/users"
+                className="text-blue-500 hover:text-blue-700"
+              >
+                {" "}
+                Buradan{" "}
+              </a>
+              Ulaşabilirsiniz.
+            </p>
+          </form>
+        </Form>
+      </div>
+
       <Footer />
     </div>
   );

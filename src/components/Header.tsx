@@ -38,18 +38,18 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed w-full bg-white z-50">
-      <div className=" bg-teal-300 m-2 rounded-md">
-        <div className="container mx-auto px-4 md:px-8 lg:px-16  text-white p-3 flex justify-between">
+    <div className="fixed z-50 w-full bg-white">
+      <div className="m-2 bg-teal-300 rounded-md ">
+        <div className="container flex justify-between p-3 px-4 mx-auto text-white md:px-8 lg:px-16">
           <a className="flex items-center" href="/">
-            <p className="text-2xl ">Dummy E-Ticaret</p>
+            <p className="text-2xl max-lg:text-xl">Dummy E-Ticaret</p>
           </a>
 
           <div className="flex items-center space-x-2 ">
             <div className={`${isLoggedIn ? "" : "hidden"}`}>
               <Popover>
                 <PopoverTrigger>
-                  <p className="flex relative items-center space-x-2 border p-2 rounded-lg">
+                  <p className="relative flex items-center p-2 space-x-2 border rounded-lg">
                     <p>Sepetim</p>
                     <ShoppingCart />
                     <Avatar className="absolute -right-2 -top-2">
@@ -62,7 +62,7 @@ export default function Header() {
                 </PopoverTrigger>
                 <PopoverContent>
                   <ScrollArea className="h-[500px] w-[300px] px-2">
-                    <div className=" font-semibold border-b pb-2">
+                    <div className="pb-2 font-semibold border-b ">
                       <div className="flex justify-between">
                         <h1 className="text-xl">Sepetim ({cart.length})</h1>
                         <h1>Toplam Fiyat: {totalPrice} $</h1>
@@ -82,7 +82,7 @@ export default function Header() {
                               <img
                                 src={item.thumbnail}
                                 alt={item.title}
-                                className="w-14 h-14 object-cover rounded-lg"
+                                className="object-cover rounded-lg w-14 h-14"
                               />
                               <div className="flex-1">
                                 <p className="font-semibold">{item.title}</p>
@@ -93,7 +93,7 @@ export default function Header() {
                               <Button
                                 variant={"destructive"}
                                 onClick={() => removeFromCart(item.id)}
-                                className="bg-red-500 hover:bg-red-600 text-white rounded-lg px-4 py-2"
+                                className="px-4 py-2 text-white bg-red-500 rounded-lg hover:bg-red-600"
                               >
                                 Sil
                               </Button>
@@ -103,7 +103,7 @@ export default function Header() {
                       )}
                     </div>
                   </ScrollArea>
-                  <div className=" pt-2">
+                  <div className="pt-2 ">
                     <Button
                       onClick={() => navigate("/my-card")}
                       className="w-full"
@@ -116,7 +116,7 @@ export default function Header() {
             </div>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="border p-2 rounded-lg">
+              <DropdownMenuTrigger className="p-2 border rounded-lg">
                 Hesabım
               </DropdownMenuTrigger>
               <DropdownMenuContent>
